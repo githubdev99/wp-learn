@@ -18,4 +18,5 @@ function load_stylesheets()
 }
 
 // The Action
+add_filter('show_admin_bar', '__return_false');
 add_action('wp_enqueue_scripts', 'load_stylesheets');
