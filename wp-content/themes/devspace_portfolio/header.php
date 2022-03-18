@@ -5,7 +5,7 @@
     <!-- Meta Data -->
     <meta charset="<?php get_bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?= wp_title('') ?> | <?= get_bloginfo('name'); ?></title>
+    <title><?= (is_404()) ? "Page not found | " . get_bloginfo('name') : get_bloginfo('name') ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
@@ -41,3 +41,7 @@
             </li>
         </ul>
     </div>
+
+    <?php if (!is_404()) : ?>
+        <div id="main-wrapper" class="main-wrapper">
+        <?php endif ?>
