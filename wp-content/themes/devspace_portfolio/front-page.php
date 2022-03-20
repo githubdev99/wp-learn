@@ -1,55 +1,5 @@
 <?php get_header() ?>
 <!--=====================================-->
-<!--=        Header Area Start       	=-->
-<!--=====================================-->
-<header class="header axil-header header-style-3">
-    <div id="axil-sticky-placeholder"></div>
-    <div class="axil-mainmenu">
-        <div class="container">
-            <div class="header-navbar">
-                <div class="header-logo">
-                    <a href="index-1.html"><img class="light-version-logo" src="<?= get_template_directory_uri() ?>/assets/media/logo.svg" alt="logo"></a>
-                    <a href="index-1.html"><img class="dark-version-logo" src="<?= get_template_directory_uri() ?>/assets/media/logo-3.svg" alt="logo"></a>
-                    <a href="index-1.html"><img class="sticky-logo" src="<?= get_template_directory_uri() ?>/assets/media/logo-2.svg" alt="logo"></a>
-                </div>
-                <div class="header-action">
-                    <ul class="list-unstyled">
-                        <li class="header-social-link">
-                            <ul class="social-icon-list list-unstyled">
-                                <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/devan-firmansyah-ramadhan-aaba4a10a" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="https://www.behance.net/"><i class="fab fa-github"></i></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidemenu-btn">
-                            <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuRight">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </li>
-                        <li class="my_switcher d-block d-lg-none">
-                            <ul>
-                                <li title="Light Mode">
-                                    <a href="javascript:void(0)" class="setColor light" data-theme="light">
-                                        <i class="fal fa-lightbulb-on"></i>
-                                    </a>
-                                </li>
-                                <li title="Dark Mode">
-                                    <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
-                                        <i class="fas fa-moon"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<!--=====================================-->
 <!--=        Banner Area Start          =-->
 <!--=====================================-->
 <section class="banner banner-style-3">
@@ -57,10 +7,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="banner-content">
-                    <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">JOHNATHAN SMITH</span>
-                    <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">UI/UX ineraction designer</h1>
+                    <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100"><?= globalData()['author']['name'] ?></span>
+                    <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200"><?= globalData()['author']['profession'] ?></h1>
                     <div class="btn-group" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300">
-                        <a href="https://dribbble.com/axilweb/" class="axil-btn btn-fill-primary btn-large">Latest Work On Dribbble</a>
+                        <a href="<?= globalData()['author']['link']['github'] ?>" class="axil-btn btn-fill-primary btn-large" target="_blank">Latest Work On Github</a>
                         <a href="about-us.html" class="about-btn">About Me</a>
                     </div>
                 </div>
@@ -103,7 +53,7 @@
     <div class="container">
         <div class="section-heading heading-light-left">
             <span class="subtitle">Case study</span>
-            <h2 class="title">Selected projects</h2>
+            <h2 class="title">History projects</h2>
             <p>Nulla facilisi. Nullam in magna id dolor blandit rutrum eget vulputate augue eget risus imperdiet.</p>
         </div>
         <div class="row row-45">
@@ -331,142 +281,5 @@
         <li class="shape-1"><img src="<?= get_template_directory_uri() ?>/assets/media/others/bubble-1.png" alt="Bubble"></li>
     </ul>
 </section>
-<!--=====================================-->
-<!--=        Contact Area Start       	=-->
-<!--=====================================-->
-<section class="section-padding bg-color-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
-                <div class="contact-address mb--30">
-                    <div class="section-heading heading-light-left">
-                        <span class="subtitle">Need a designer?</span>
-                        <h2 class="title">Let’s work together</h2>
-                    </div>
-                    <div class="address-list">
-                        <div class="address">
-                            <h6 class="title">Mail</h6>
-                            <p><a href="mailto:example@gmail.com">example@gmail.com</a></p>
-                        </div>
-                        <div class="address">
-                            <h6 class="title">Address</h6>
-                            <p>Warnwe Park Streetperrine, FL 33157 New York City</p>
-                        </div>
-                        <div class="address">
-                            <h6 class="title">Phone</h6>
-                            <p><a href="tel:+0123456789">+0123456789</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">
-                <div class="contact-form-box mb--30">
-                    <h3 class="title">Describe your project</h3>
-                    <form method="POST" action="https://axilthemes.com/demo/template/abstrak/mail.php" class="axil-contact-form">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="contact-name" placeholder="John Smith">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" name="contact-email" placeholder="example@mail.com">
-                        </div>
-                        <div class="form-group mb--40">
-                            <label>How can we help you?</label>
-                            <textarea name="contact-message" id="message" class="form-control textarea" cols="30" rows="6"></textarea>
-                        </div>
-                        <div class="form-group text-end">
-                            <button type="submit" class="axil-btn btn-fill-primary w-auto btn-primary" name="submit-btn">SEND</button>
-                        </div>
-                        <input type="hidden" class="form-control" name="contact-company" value="Null">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--=====================================-->
-<!--=        Footer Area Start       	=-->
-<!--=====================================-->
-<footer class="footer-area footer-dark">
-    <div class="container">
-        <div class="footer-bottom" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-copyright">
-                        <span class="copyright-text">© 2021. All rights reserved by <a href="https://axilthemes.com/">Axilthemes</a>.</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-bottom-link">
-                        <ul class="list-unstyled">
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-use.html">Terms of Use</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-<!--=====================================-->
-<!--=       Offcanvas Menu Area       	=-->
-<!--=====================================-->
-<div class="offcanvas offcanvas-end header-offcanvasmenu" tabindex="-1" id="offcanvasMenuRight">
-    <div class="offcanvas-header">
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <form action="#" class="side-nav-search-form">
-            <div class="form-group">
-                <input type="text" class="search-field" name="search-field" placeholder="Search...">
-                <button class="side-nav-search-btn"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
-        <div class="row ">
-            <div class="col-lg-5 col-xl-6">
-                <ul class="main-navigation list-unstyled">
-                    <li><a href="index-1.html">Digital Agency</a></li>
-                    <li><a href="index-3.html">Creative Agency</a></li>
-                    <li><a href="index-4.html">Personal Portfolio</a></li>
-                    <li><a href="index-5.html">Home Startup</a></li>
-                    <li><a href="index-6.html">Corporate Agency</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-7 col-xl-6">
-                <div class="contact-info-wrap">
-                    <div class="contact-inner">
-                        <address class="address">
-                            <span class="title">Contact Information</span>
-                            <p>Theodore Lowe, Ap #867-859 <br> Sit Rd, Azusa New York</p>
-                        </address>
-                        <address class="address">
-                            <span class="title">We're Available 24/7. Call Now.</span>
-                            <a class="tel" href="tel:8884562790"><i class="fas fa-phone"></i>(888)
-                                456-2790</a>
-                            <a class="tel" href="tel:12125553333"><i class="fas fa-fax"></i>(121)
-                                255-53333</a>
-                        </address>
-                    </div>
-                    <div class="contact-inner">
-                        <h5 class="title">Find us here</h5>
-                        <div class="contact-social-share">
-                            <ul class="social-share list-unstyled">
-                                <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://www.behance.net/"><i class="fab fa-github"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/devan-firmansyah-ramadhan-aaba4a10a" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- /container -->
 <?php get_footer() ?>

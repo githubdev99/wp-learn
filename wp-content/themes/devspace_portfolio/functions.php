@@ -1,6 +1,6 @@
 <?php
 // The Function
-function load_stylesheets()
+function loadStylesheets()
 {
     $theme_version = wp_get_theme()->get('Version');
 
@@ -66,7 +66,7 @@ function load_stylesheets()
     );
 }
 
-function load_javascripts()
+function loadJavascripts()
 {
     $theme_version = wp_get_theme()->get('Version');
 
@@ -191,7 +191,49 @@ function load_javascripts()
     );
 }
 
+function globalData()
+{
+    global $core;
+
+    $core['author'] = [
+        'name' => (!empty(get_the_author_meta('display_name', 1))) ? get_the_author_meta('display_name', 1) : '',
+        'email' => (!empty(get_the_author_meta('email', 1))) ? get_the_author_meta('email', 1) : '',
+        'phoneNumber' => '',
+        'profession' => '',
+        'link' => [
+            'facebook' => '',
+            'instagram' => '',
+            'linkedin' => '',
+            'github' => '',
+        ],
+    ];
+
+    if (!empty(get_the_author_meta('description', 1))) {
+        $getAuthorDescription = json_decode(get_the_author_meta('description', 1), true);
+
+        $core['author']['address'] = (array_key_exists('address', $getAuthorDescription)) ? $getAuthorDescription['address'] : '';
+        $core['author']['phoneNumber'] = (array_key_exists('phoneNumber', $getAuthorDescription)) ? $getAuthorDescription['phoneNumber'] : '';
+        $core['author']['profession'] = (array_key_exists('profession', $getAuthorDescription)) ? $getAuthorDescription['profession'] : '';
+
+        if (array_key_exists('link', $getAuthorDescription)) {
+            $core['author']['link']['facebook'] = (array_key_exists('facebook', $getAuthorDescription['link'])) ? $getAuthorDescription['link']['facebook'] : '';
+            $core['author']['link']['instagram'] = (array_key_exists('instagram', $getAuthorDescription['link'])) ? $getAuthorDescription['link']['instagram'] : '';
+            $core['author']['link']['linkedin'] = (array_key_exists('linkedin', $getAuthorDescription['link'])) ? $getAuthorDescription['link']['linkedin'] : '';
+            $core['author']['link']['github'] = (array_key_exists('github', $getAuthorDescription['link'])) ? $getAuthorDescription['link']['github'] : '';
+        }
+    }
+
+    return $core;
+}
+
+function setThemeSupport()
+{
+    add_theme_support('title-tag');
+}
+
 // Use Function
 add_filter('show_admin_bar', '__return_false');
-add_action('wp_enqueue_scripts', 'load_stylesheets');
-add_action('wp_enqueue_scripts', 'load_javascripts');
+add_action('wp_enqueue_scripts', 'loadStylesheets');
+add_action('wp_enqueue_scripts', 'loadJavascripts');
+add_action('after_setup_theme', 'globalData');
+add_action('after_setup_theme', 'setThemeSupport');
