@@ -7,10 +7,14 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="banner-content">
-                    <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100"><?= globalData()['author']['name'] ?></span>
-                    <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200"><?= globalData()['author']['profession'] ?></h1>
+                    <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100"><?= get_field('full_name', 'options') ?></span>
+                    <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200"><?= get_field('profession', 'options') ?></h1>
                     <div class="btn-group" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300">
-                        <a href="<?= globalData()['author']['link']['github'] ?>" class="axil-btn btn-fill-primary btn-large" target="_blank">Latest Work On Github</a>
+                        <?php foreach (get_field('social_media', 'options') as $key_social_media) : ?>
+                            <?php if (stripos($key_social_media['name'], 'github') !== false) : ?>
+                                <a href="<?= $key_social_media['link']['url'] ?>" class="axil-btn btn-fill-primary btn-large" target="<?= $key_social_media['link']['target'] ?>">Latest Work On <?= $key_social_media['name'] ?></a>
+                            <?php endif ?>
+                        <?php endforeach ?>
                         <a href="about-us.html" class="about-btn">About Me</a>
                     </div>
                 </div>
@@ -18,7 +22,7 @@
             <div class="col-lg-6">
                 <div class="banner-thumbnail">
                     <div class="large-thumb" data-sal="slide-up" data-sal-duration="800" data-sal-delay="500">
-                        <img class="paralax-image" src="<?= get_template_directory_uri() ?>/assets/media/banner/banner-thumb-6.png" alt="Shape">
+                        <img class="paralax-image" src="<?= get_field('banner_thumbnail')['sizes']['large'] ?>" alt="<?= get_field('banner_thumbnail')['alt'] ?>">
                     </div>
                 </div>
             </div>

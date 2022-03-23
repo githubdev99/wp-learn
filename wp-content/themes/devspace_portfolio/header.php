@@ -14,7 +14,7 @@
     <?php wp_head() ?>
 </head>
 
-<body class="sticky-header">
+<body class="sticky-header <?= get_field('color_mode', 'options') ?>">
     <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   	<![endif]-->
@@ -25,21 +25,6 @@
     <!-- Preloader Start Here -->
     <div id="preloader"></div>
     <!-- Preloader End Here -->
-
-    <div class="my_switcher d-none d-lg-block">
-        <ul>
-            <li title="Light Mode">
-                <a href="javascript:void(0)" class="setColor light" data-theme="light">
-                    <i class="fal fa-lightbulb-on"></i>
-                </a>
-            </li>
-            <li title="Dark Mode">
-                <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
-                    <i class="fas fa-moon"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
 
     <?php if (!is_404()) : ?>
         <!--=====================================-->
@@ -62,12 +47,12 @@
                             <div class="contact-inner">
                                 <address class="address">
                                     <span class="title">Contact Information</span>
-                                    <p><?= globalData()['author']['address'] ?></p>
+                                    <p><?= get_field('address', 'options') ?></p>
                                 </address>
                                 <address class="address">
                                     <span class="title">Available 24/7. Call Now.</span>
-                                    <a class="tel" href="tel:<?= globalData()['author']['phoneNumber'] ?>" target="_blank"><i class="fas fa-phone"></i><?= globalData()['author']['phoneNumber'] ?></a>
-                                    <a class="tel" href="mailto:<?= globalData()['author']['email'] ?>" target="_blank"><i class="fas fa-envelope"></i><?= globalData()['author']['email'] ?></a>
+                                    <a class="tel" href="tel:<?= get_field('phone_number', 'options') ?>" target="_blank"><i class="fas fa-phone"></i><?= get_field('phone_number', 'options') ?></a>
+                                    <a class="tel" href="mailto:<?= get_field('email', 'options') ?>" target="_blank"><i class="fas fa-envelope"></i><?= get_field('email', 'options') ?></a>
                                 </address>
                             </div>
                         </div>
@@ -77,10 +62,9 @@
                             <h5 class="title">Find me here</h5>
                             <div class="contact-social-share">
                                 <ul class="social-share list-unstyled">
-                                    <li><a href="<?= globalData()['author']['link']['facebook'] ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="<?= globalData()['author']['link']['instagram'] ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="<?= globalData()['author']['link']['linkedin'] ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="<?= globalData()['author']['link']['github'] ?>" target="_blank"><i class="fab fa-github"></i></a></li>
+                                    <?php foreach (get_field('social_media', 'options') as $key_social_media) : ?>
+                                        <li><a href="<?= $key_social_media['link']['url'] ?>" target="<?= $key_social_media['link']['target'] ?>"><i class="<?= $key_social_media['icon_class'] ?>"></i></a></li>
+                                    <?php endforeach ?>
                                 </ul>
                             </div>
                         </div>
@@ -107,10 +91,9 @@
                                 <ul class="list-unstyled">
                                     <li class="header-social-link">
                                         <ul class="social-icon-list list-unstyled">
-                                            <li><a href="<?= globalData()['author']['link']['facebook'] ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="<?= globalData()['author']['link']['instagram'] ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="<?= globalData()['author']['link']['linkedin'] ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="<?= globalData()['author']['link']['github'] ?>" target="_blank"><i class="fab fa-github"></i></a></li>
+                                            <?php foreach (get_field('social_media', 'options') as $key_social_media) : ?>
+                                                <li><a href="<?= $key_social_media['link']['url'] ?>" target="<?= $key_social_media['link']['target'] ?>"><i class="<?= $key_social_media['icon_class'] ?>"></i></a></li>
+                                            <?php endforeach ?>
                                         </ul>
                                     </li>
                                     <li class="sidemenu-btn">

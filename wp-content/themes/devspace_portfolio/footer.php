@@ -9,21 +9,21 @@
                 <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
                     <div class="contact-address mb--30">
                         <div class="section-heading heading-light-left">
-                            <span class="subtitle">Need a <?= globalData()['author']['profession'] ?>?</span>
+                            <span class="subtitle">Need a <?= get_field('profession', 'options') ?>?</span>
                             <h2 class="title">Let’s work together</h2>
                         </div>
                         <div class="address-list">
                             <div class="address">
                                 <h6 class="title">Mail</h6>
-                                <p><a href="mailto:<?= globalData()['author']['email'] ?>" target="_blank"><?= globalData()['author']['email'] ?></a></p>
+                                <p><a href="mailto:<?= get_field('email', 'options') ?>" target="_blank"><?= get_field('email', 'options') ?></a></p>
                             </div>
                             <div class="address">
                                 <h6 class="title">Address</h6>
-                                <p><?= globalData()['author']['address'] ?></p>
+                                <p><?= get_field('address', 'options') ?></p>
                             </div>
                             <div class="address">
                                 <h6 class="title">Phone</h6>
-                                <p><a href="tel:<?= globalData()['author']['phoneNumber'] ?>" target="_blank"><?= globalData()['author']['phoneNumber'] ?></a></p>
+                                <p><a href="tel:<?= get_field('phone_number', 'options') ?>" target="_blank"><?= get_field('phone_number', 'options') ?></a></p>
                             </div>
                         </div>
                     </div>
