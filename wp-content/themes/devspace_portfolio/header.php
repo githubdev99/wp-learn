@@ -35,12 +35,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <form action="#" class="side-nav-search-form">
+                <!-- <form action="#" class="side-nav-search-form">
                     <div class="form-group">
                         <input type="text" class="search-field" name="search-field" placeholder="Search...">
                         <button class="side-nav-search-btn"><i class="fas fa-search"></i></button>
                     </div>
-                </form>
+                </form> -->
                 <div class="row ">
                     <div class="col-lg-5 col-xl-6">
                         <div class="contact-info-wrap">
@@ -83,9 +83,9 @@
                     <div class="container">
                         <div class="header-navbar">
                             <div class="header-logo">
-                                <a href="index-1.html"><img class="light-version-logo" src="<?= get_template_directory_uri() ?>/assets/media/new-logo.svg" alt="logo"></a>
-                                <a href="index-1.html"><img class="dark-version-logo" src="<?= get_template_directory_uri() ?>/assets/media/new-logo-3.svg" alt="logo"></a>
-                                <a href="index-1.html"><img class="sticky-logo" src="<?= get_template_directory_uri() ?>/assets/media/new-logo-2.svg" alt="logo"></a>
+                                <a href="<?= home_url() ?>"><img class="light-version-logo" src="<?= get_template_directory_uri() ?>/assets/media/new-logo.svg" alt="logo"></a>
+                                <a href="<?= home_url() ?>"><img class="dark-version-logo" src="<?= get_template_directory_uri() ?>/assets/media/new-logo-3.svg" alt="logo"></a>
+                                <a href="<?= home_url() ?>"><img class="sticky-logo" src="<?= get_template_directory_uri() ?>/assets/media/new-logo-2.svg" alt="logo"></a>
                             </div>
                             <div class="header-action">
                                 <ul class="list-unstyled">

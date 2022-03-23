@@ -3,27 +3,27 @@
     <!--=====================================-->
     <!--=        Contact Area Start       	=-->
     <!--=====================================-->
-    <section class="section-padding bg-color-dark">
+    <section class="section-padding" id="contact-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
                     <div class="contact-address mb--30">
-                        <div class="section-heading heading-light-left">
+                        <div class="section-heading heading-light-left mb-0">
                             <span class="subtitle">Need a <?= get_field('profession', 'options') ?>?</span>
-                            <h2 class="title">Let’s work together</h2>
+                            <h2 class="title text-black">Let’s work together</h2>
                         </div>
                         <div class="address-list">
                             <div class="address">
-                                <h6 class="title">Mail</h6>
-                                <p><a href="mailto:<?= get_field('email', 'options') ?>" target="_blank"><?= get_field('email', 'options') ?></a></p>
+                                <h6 class="title text-muted">Mail</h6>
+                                <p><a href="mailto:<?= get_field('email', 'options') ?>" target="_blank" class="text-black"><?= get_field('email', 'options') ?></a></p>
                             </div>
                             <div class="address">
-                                <h6 class="title">Address</h6>
-                                <p><?= get_field('address', 'options') ?></p>
+                                <h6 class="title text-muted">Address</h6>
+                                <p class="text-black"><?= get_field('address', 'options') ?></p>
                             </div>
                             <div class="address">
-                                <h6 class="title">Phone</h6>
-                                <p><a href="tel:<?= get_field('phone_number', 'options') ?>" target="_blank"><?= get_field('phone_number', 'options') ?></a></p>
+                                <h6 class="title text-muted">Phone</h6>
+                                <p><a href="tel:<?= get_field('phone_number', 'options') ?>" target="_blank" class="text-black"><?= get_field('phone_number', 'options') ?></a></p>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                 <input type="email" class="form-control" name="contact-email" placeholder="example@mail.com">
                             </div>
                             <div class="form-group mb--40">
-                                <label>How can we help you?</label>
+                                <label>How can i help you?</label>
                                 <textarea name="contact-message" id="message" class="form-control textarea" cols="30" rows="6"></textarea>
                             </div>
                             <div class="form-group text-end">

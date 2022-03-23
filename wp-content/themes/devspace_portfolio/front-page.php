@@ -15,7 +15,7 @@
                                 <a href="<?= $key_social_media['link']['url'] ?>" class="axil-btn btn-fill-primary btn-large" target="<?= $key_social_media['link']['target'] ?>">Latest Work On <?= $key_social_media['name'] ?></a>
                             <?php endif ?>
                         <?php endforeach ?>
-                        <a href="about-us.html" class="about-btn">About Me</a>
+                        <a href="#contact-area" class="about-btn">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -56,66 +56,25 @@
 <section class="section section-padding-equal bg-color-dark">
     <div class="container">
         <div class="section-heading heading-light-left">
-            <span class="subtitle">Case study</span>
-            <h2 class="title">History projects</h2>
-            <p>Nulla facilisi. Nullam in magna id dolor blandit rutrum eget vulputate augue eget risus imperdiet.</p>
+            <h2 class="title">Riwayat Projek</h2>
+            <p>Berikut beberapa projek yang sudah pernah saya kerjakan</p>
         </div>
         <div class="row row-45">
-            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
-                <div class="project-grid project-style-2">
-                    <div class="thumbnail">
-                        <a href="single-portfolio.html">
-                            <img src="<?= get_template_directory_uri() ?>/assets/media/project/project-7.png" alt="project">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <span class="subtitle">ios, design</span>
-                        <h3 class="title"><a href="single-portfolio.html">Mark Design</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
-                <div class="project-grid project-style-2">
-                    <div class="thumbnail">
-                        <a href="single-portfolio.html">
-                            <img src="<?= get_template_directory_uri() ?>/assets/media/project/project-8.png" alt="project">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <span class="subtitle">ios, design</span>
-                        <h3 class="title"><a href="single-portfolio.html">Abstrak Agency</a></h3>
+            <?php foreach (get_field('project_section') as $key_project_section) : ?>
+                <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
+                    <div class="project-grid project-style-2">
+                        <div class="thumbnail">
+                            <a href="<?= $key_project_section['link']['url'] ?>" target="<?= $key_project_section['link']['target'] ?>">
+                                <img src="<?= $key_project_section['image']['sizes']['large'] ?>" alt="project">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <span class="subtitle"><?= implode(', ', array_column($key_project_section['tag'], 'name')) ?></span>
+                            <h3 class="title"><a href="<?= $key_project_section['link']['url'] ?>" target="<?= $key_project_section['link']['target'] ?>"><?= $key_project_section['name'] ?></a></h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
-                <div class="project-grid project-style-2">
-                    <div class="thumbnail">
-                        <a href="single-portfolio.html">
-                            <img src="<?= get_template_directory_uri() ?>/assets/media/project/project-9.png" alt="project">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <span class="subtitle">ios, design</span>
-                        <h3 class="title"><a href="single-portfolio.html">Archi- Online platform</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
-                <div class="project-grid project-style-2">
-                    <div class="thumbnail">
-                        <a href="single-portfolio.html">
-                            <img src="<?= get_template_directory_uri() ?>/assets/media/project/project-12.png" alt="project">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <span class="subtitle">ios, design</span>
-                        <h3 class="title"><a href="single-portfolio.html">Wordpress theme</a></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="more-project-btn">
-            <a href="portfolio.html" class="axil-btn btn-fill-white">Discover More Projects</a>
+            <?php endforeach ?>
         </div>
     </div>
     <ul class="list-unstyled shape-group-10">
@@ -130,8 +89,7 @@
 <section class="section section-padding pb--80 pb_lg--40 pb_md--20 pb_sm--0">
     <div class="container">
         <div class="section-heading heading-left">
-            <span class="subtitle">Featured Case study</span>
-            <h2 class="title">Photography &amp; drawing</h2>
+            <h2 class="title">Riwayat Pekerjaan</h2>
         </div>
         <div class="row row-45">
             <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
@@ -223,7 +181,7 @@
 <!--=====================================-->
 <!--=       Testimonial Area Start      =-->
 <!--=====================================-->
-<section class="section section-padding-equal">
+<!-- <section class="section section-padding-equal">
     <div class="container">
         <div class="section-heading heading-left">
             <span class="subtitle">Testimonial</span>
@@ -284,6 +242,6 @@
     <ul class="shape-group-4 list-unstyled">
         <li class="shape-1"><img src="<?= get_template_directory_uri() ?>/assets/media/others/bubble-1.png" alt="Bubble"></li>
     </ul>
-</section>
+</section> -->
 <!-- /container -->
 <?php get_footer() ?>
