@@ -7,13 +7,13 @@
         <div class="row row-45">
             <?php foreach (get_field('project_section') as $key_project_section) : ?>
                 <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
-                    <?php get_template_part("/template/component/card", "project", $args = [
+                    <?php get_template_part("/template/component/card", "project", [
                         'url' => $key_project_section['link']['url'],
                         'url_target' => $key_project_section['link']['target'],
                         'image_url' => $key_project_section['image']['sizes']['large'],
                         'image_alt' => $key_project_section['image']['alt'],
-                        'project_tag' => array_column($key_project_section['tag'], 'name'),
-                        'project_name' => $key_project_section['name'],
+                        'project_subtitle' => implode(', ', array_column($key_project_section['tag'], 'name')),
+                        'project_title' => $key_project_section['name'],
                     ]) ?>
                 </div>
             <?php endforeach ?>
