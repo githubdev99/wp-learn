@@ -5,19 +5,16 @@
             <p>Berikut beberapa perjalanan karir saya</p>
         </div>
         <div class="row row-45">
-            <?php foreach (get_field('project_section') as $key_company_section) : ?>
+            <?php foreach (get_field('company_section') as $key_company_section) : ?>
                 <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
-                    <div class="project-grid project-style-2">
-                        <div class="thumbnail">
-                            <a href="single-portfolio.html">
-                                <img src="<?= get_template_directory_uri() ?>/assets/media/project/project-10.png" alt="project">
-                            </a>
-                        </div>
-                        <div class="content">
-                            <span class="subtitle">2021</span>
-                            <h3 class="title"><a href="single-portfolio.html">Product photography</a></h3>
-                        </div>
-                    </div>
+                    <?php get_template_part("/template/component/card", "project", [
+                        'url' => $key_company_section['link']['url'],
+                        'url_target' => $key_company_section['link']['target'],
+                        'image_url' => $key_company_section['image']['sizes']['large'],
+                        'image_alt' => $key_company_section['image']['alt'],
+                        'project_subtitle' => $key_company_section['job'],
+                        'project_title' => $key_company_section['name'],
+                    ]) ?>
                 </div>
             <?php endforeach ?>
         </div>
