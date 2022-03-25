@@ -191,7 +191,7 @@ function load_javascripts()
     );
 }
 
-function set_theme_support()
+function setup_theme()
 {
     add_theme_support('title-tag');
 }
@@ -209,4 +209,4 @@ if (function_exists('acf_add_options_page')) {
 add_filter('show_admin_bar', '__return_false');
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 add_action('wp_enqueue_scripts', 'load_javascripts');
-add_action('after_setup_theme', 'set_theme_support');
+add_action('after_setup_theme', 'setup_theme');
