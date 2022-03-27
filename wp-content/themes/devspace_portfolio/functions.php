@@ -214,3 +214,4 @@ add_action('after_setup_theme', 'setup_theme');
 // Add Function Outside
 require_once get_template_directory() . "/inc/get-history-projects.php";
 require_once get_template_directory() . "/inc/get-history-companies.php";
+require_once get_template_directory() . "/inc/get-vendor.php";

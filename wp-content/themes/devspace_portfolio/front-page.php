@@ -1,6 +1,7 @@
 <?php
 $get_history_projects = get_history_projects();
 $get_history_companies = get_history_companies();
+$get_vendor = get_vendor();
 ?>
 
 <?php get_header() ?>
@@ -11,5 +12,7 @@ $get_history_companies = get_history_companies();
 <?php get_template_part("/template/section/history", "companies", [
     'get_history_companies' => $get_history_companies,
 ]) ?>
-<?php get_template_part("/template/section/vendor") ?>
+<?php get_template_part("/template/section/vendor", null, [
+    'get_vendor' => $get_vendor,
+]) ?>
 <?php get_footer() ?>
