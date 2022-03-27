@@ -5,15 +5,15 @@
             <p>Berikut beberapa perjalanan karir saya</p>
         </div>
         <div class="row row-45">
-            <?php foreach (get_field('company_section') as $key_company_section) : ?>
+            <?php foreach ($args['get_history_companies'] as $key_get_history_companies) : ?>
                 <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
                     <?php get_template_part("/template/component/card", "project", [
-                        'url' => $key_company_section['link']['url'],
-                        'url_target' => $key_company_section['link']['target'],
-                        'image_url' => $key_company_section['image']['sizes']['large'],
-                        'image_alt' => $key_company_section['image']['alt'],
-                        'project_subtitle' => $key_company_section['job'],
-                        'project_title' => $key_company_section['name'],
+                        'url' => $key_get_history_companies['url'],
+                        'url_target' => $key_get_history_companies['url_target'],
+                        'image_url' => $key_get_history_companies['image_url'],
+                        'image_alt' => $key_get_history_companies['image_alt'],
+                        'project_subtitle' => $key_get_history_companies['project_subtitle'],
+                        'project_title' => $key_get_history_companies['project_title'],
                     ]) ?>
                 </div>
             <?php endforeach ?>

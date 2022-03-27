@@ -210,3 +210,7 @@ add_filter('show_admin_bar', '__return_false');
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 add_action('wp_enqueue_scripts', 'load_javascripts');
 add_action('after_setup_theme', 'setup_theme');
+
+// Add Function Outside
+require_once get_template_directory() . "/inc/get-history-projects.php";
+require_once get_template_directory() . "/inc/get-history-companies.php";

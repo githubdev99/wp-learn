@@ -8,20 +8,20 @@
             <div class="isotope-button isotope-project-btn">
                 <button data-filter="*" class="is-checked"><span class="filter-text text-white">Semua Projek</span></button>
 
-                <?php foreach ($args['filter_project_section'] as $key_filter_project_section) : ?>
-                    <button data-filter=".<?= strtolower($key_filter_project_section) ?>"><span class="filter-text text-white"><?= $key_filter_project_section ?></span></button>
+                <?php foreach ($args['get_history_projects']['filter'] as $key_get_history_projects_filter) : ?>
+                    <button data-filter=".<?= strtolower($key_get_history_projects_filter) ?>"><span class="filter-text text-white"><?= $key_get_history_projects_filter ?></span></button>
                 <?php endforeach ?>
             </div>
             <div class="row isotope-list">
-                <?php foreach ($args['data_project_section'] as $key_data_project_section) : ?>
-                    <div class="col-xl-4 col-lg-3 col-md-6 project <?= strtolower($key_data_project_section['type']) ?>">
+                <?php foreach ($args['get_history_projects']['data'] as $key_get_history_projects_data) : ?>
+                    <div class="col-xl-4 col-lg-3 col-md-6 project <?= strtolower($key_get_history_projects_data['type']) ?>">
                         <?php get_template_part("/template/component/card", "project", [
-                            'url' => $key_data_project_section['url'],
-                            'url_target' => $key_data_project_section['url_target'],
-                            'image_url' => $key_data_project_section['image_url'],
-                            'image_alt' => $key_data_project_section['image_alt'],
-                            'project_subtitle' => $key_data_project_section['project_subtitle'],
-                            'project_title' => $key_data_project_section['project_title'],
+                            'url' => $key_get_history_projects_data['url'],
+                            'url_target' => $key_get_history_projects_data['url_target'],
+                            'image_url' => $key_get_history_projects_data['image_url'],
+                            'image_alt' => $key_get_history_projects_data['image_alt'],
+                            'project_subtitle' => $key_get_history_projects_data['project_subtitle'],
+                            'project_title' => $key_get_history_projects_data['project_title'],
                         ]) ?>
                     </div>
                 <?php endforeach ?>
