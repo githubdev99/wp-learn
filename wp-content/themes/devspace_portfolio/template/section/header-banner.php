@@ -8,10 +8,10 @@
                     <div class="btn-group" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300">
                         <?php foreach (get_field('social_media', 'options') as $key_social_media) : ?>
                             <?php if (stripos($key_social_media['name'], 'github') !== false) : ?>
-                                <a href="<?= $key_social_media['link']['url'] ?>" class="axil-btn btn-fill-primary btn-large" target="<?= $key_social_media['link']['target'] ?>">Latest Work On <?= $key_social_media['name'] ?></a>
+                                <a href="<?= $key_social_media['link']['url'] ?>" class="axil-btn btn-fill-primary btn-large" target="<?= $key_social_media['link']['target'] ?>">History Projek Terakhir di <?= $key_social_media['name'] ?></a>
                             <?php endif ?>
                         <?php endforeach ?>
-                        <a href="#contact-area" class="about-btn">Contact Me</a>
+                        <a href="#contact-area" class="about-btn">Kontak Saya</a>
                     </div>
                 </div>
             </div>

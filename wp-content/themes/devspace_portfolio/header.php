@@ -46,11 +46,11 @@
                         <div class="contact-info-wrap">
                             <div class="contact-inner">
                                 <address class="address">
-                                    <span class="title">Contact Information</span>
+                                    <span class="title">Informasi Alamat dan Kontak</span>
                                     <p><?= get_field('address', 'options') ?></p>
                                 </address>
                                 <address class="address">
-                                    <span class="title">Available 24/7. Call Now.</span>
+                                    <span class="title">Tersedia 24/7. Telepon sekarang.</span>
                                     <a class="tel" href="tel:<?= get_field('phone_number', 'options') ?>" target="_blank"><i class="fas fa-phone"></i><?= get_field('phone_number', 'options') ?></a>
                                     <a class="tel" href="mailto:<?= get_field('email', 'options') ?>" target="_blank"><i class="fas fa-envelope"></i><?= get_field('email', 'options') ?></a>
                                 </address>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-lg-7 col-xl-6">
                         <div class="contact-inner">
-                            <h5 class="title">Find me here</h5>
+                            <h5 class="title">Cari saya disini</h5>
                             <div class="contact-social-share">
                                 <ul class="social-share list-unstyled">
                                     <?php foreach (get_field('social_media', 'options') as $key_social_media) : ?>

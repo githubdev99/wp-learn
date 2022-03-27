@@ -4,19 +4,28 @@
             <h2 class="title">Riwayat Projek</h2>
             <p>Berikut beberapa projek yang sudah pernah saya kerjakan</p>
         </div>
-        <div class="row row-45">
-            <?php foreach (get_field('project_section') as $key_project_section) : ?>
-                <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
-                    <?php get_template_part("/template/component/card", "project", [
-                        'url' => $key_project_section['link']['url'],
-                        'url_target' => $key_project_section['link']['target'],
-                        'image_url' => $key_project_section['image']['sizes']['large'],
-                        'image_alt' => $key_project_section['image']['alt'],
-                        'project_subtitle' => implode(', ', array_column($key_project_section['tag'], 'name')),
-                        'project_title' => $key_project_section['name'],
-                    ]) ?>
-                </div>
-            <?php endforeach ?>
+        <div class="axil-isotope-wrapper">
+            <div class="isotope-button isotope-project-btn">
+                <button data-filter="*" class="is-checked"><span class="filter-text text-white">Semua Projek</span></button>
+
+                <?php foreach ($args['filter_project_section'] as $key_filter_project_section) : ?>
+                    <button data-filter=".<?= strtolower($key_filter_project_section) ?>"><span class="filter-text text-white"><?= $key_filter_project_section ?></span></button>
+                <?php endforeach ?>
+            </div>
+            <div class="row isotope-list">
+                <?php foreach ($args['data_project_section'] as $key_data_project_section) : ?>
+                    <div class="col-xl-4 col-lg-3 col-md-6 project <?= strtolower($key_data_project_section['type']) ?>">
+                        <?php get_template_part("/template/component/card", "project", [
+                            'url' => $key_data_project_section['url'],
+                            'url_target' => $key_data_project_section['url_target'],
+                            'image_url' => $key_data_project_section['image_url'],
+                            'image_alt' => $key_data_project_section['image_alt'],
+                            'project_subtitle' => $key_data_project_section['project_subtitle'],
+                            'project_title' => $key_data_project_section['project_title'],
+                        ]) ?>
+                    </div>
+                <?php endforeach ?>
+            </div>
         </div>
     </div>
     <ul class="list-unstyled shape-group-10">

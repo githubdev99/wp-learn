@@ -9,20 +9,20 @@
                 <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
                     <div class="contact-address mb--30">
                         <div class="section-heading heading-light-left mb-0">
-                            <span class="subtitle">Need a <?= get_field('profession', 'options') ?>?</span>
-                            <h2 class="title text-black">Let’s work together</h2>
+                            <span class="subtitle">Butuh seorang <?= get_field('profession', 'options') ?>?</span>
+                            <h2 class="title text-black">Yuk kerjasama</h2>
                         </div>
                         <div class="address-list">
                             <div class="address">
-                                <h6 class="title text-muted">Mail</h6>
+                                <h6 class="title text-muted">Email</h6>
                                 <p><a href="mailto:<?= get_field('email', 'options') ?>" target="_blank" class="text-black"><?= get_field('email', 'options') ?></a></p>
                             </div>
                             <div class="address">
-                                <h6 class="title text-muted">Address</h6>
+                                <h6 class="title text-muted">Alamat</h6>
                                 <p class="text-black"><?= get_field('address', 'options') ?></p>
                             </div>
                             <div class="address">
-                                <h6 class="title text-muted">Phone</h6>
+                                <h6 class="title text-muted">No. Telepon</h6>
                                 <p><a href="tel:<?= get_field('phone_number', 'options') ?>" target="_blank" class="text-black"><?= get_field('phone_number', 'options') ?></a></p>
                             </div>
                         </div>
@@ -30,18 +30,18 @@
                 </div>
                 <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">
                     <div class="contact-form-box mb--30">
-                        <h3 class="title">Describe your project</h3>
+                        <h3 class="title">Kontak saya disini</h3>
                         <form method="POST" action="" class="axil-contact-form">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="contact-name" placeholder="Full Name">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="contact-name" placeholder="Nama Lengkap">
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" name="contact-email" placeholder="example@mail.com">
+                                <input type="email" class="form-control" name="contact-email" placeholder="namaemailmu@mail.com">
                             </div>
                             <div class="form-group mb--40">
-                                <label>How can i help you?</label>
+                                <label>Bagaimana saya bisa membantu kamu?</label>
                                 <textarea name="contact-message" id="message" class="form-control textarea" cols="30" rows="6"></textarea>
                             </div>
                             <div class="form-group text-end">
